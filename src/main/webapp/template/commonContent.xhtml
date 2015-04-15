@@ -6,24 +6,37 @@
       >
      <h:head>
     	<h:outputStylesheet name="../resources/css/style.css" library="css" />
-    	
+    	<script src="/resources/js/jquery.js"></script>
     </h:head>
+    
+    <script>
+	$(document).ready(function(){
+	    $("submit").click(function(){
+	        $("#formlogin").remove();
+	    });
+	});
+	</script>
+	
     <body>
 	    <ui:composition>
-	
-			conteudodsa dasdsa<br />
-			d<br />
-			sad<br />
-			sa<br />
-			dsa<br />
-			d<br />
-			sadconteudodsa dasdsa<br />
-			d<br />
-			sad<br />
-			sa<br />
-			dsa<br />
-			d<br />
-			sad
+				<div id="formlogin">
+				<h:form>
+		           	
+		            <h2>Bem vindo! Como se chama?</h2>
+		            <h:inputText id="username"
+		                         title="My name is: "
+		                         value="#{login.name}"
+		                         required="true"
+		                         requiredMessage="Erro: deve inserir um nome."
+		                         maxlength="25" />
+		            <p></p>
+		            <h:commandButton id="submit" value="Submit" 
+		                             action="../index" />
+		            <h:commandButton id="reset" value="Reset" type="reset" />
+		            
+		             
+		        </h:form>
+	      	    </div>
 				
 	    </ui:composition>
     </body>
